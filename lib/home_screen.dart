@@ -8,7 +8,7 @@ import 'package:islami_app/taps/sebha_tap.dart';
 import 'package:islami_app/taps/time_tap.dart';
 
 class HomeScreen extends StatefulWidget {
-   HomeScreen({super.key});
+  HomeScreen({super.key});
   static const String routeName = '/';
 
   @override
@@ -25,14 +25,43 @@ class _HomeScreenState extends State<HomeScreen> {
     RadioTap(),
     TimeTap(),
   ];
+  List<String> backgroundImageNames = [
+    'quran_background',
+    'hadeth_background',
+    'sebha_background',
+    'radio_background',
+    'time_background',
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: screens[currentIndex],
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+              'assets/images/${backgroundImageNames[currentIndex]}.png',
+            ), // provider the image for the widget(that show the image)
+            fit: BoxFit.fill,
+          ),
+        ),
+        child: SafeArea(
+          child: Column(
+            children: [
+              Image.asset(
+                'assets/images/header.png',
+                height: MediaQuery.sizeOf(context).height * 0.15,
+                fit: BoxFit.fitWidth,
+              ), //that show the image ,cause it widget not provider like borderRaidius.circular
+              screens[currentIndex],
+            ],
+          ),
+        ),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         onTap: (index) {
+          if (index == currentIndex) return;
           currentIndex = index;
           setState(() {});
         },
