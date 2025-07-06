@@ -14,5 +14,26 @@ class AppTheme {
       showUnselectedLabels: false,
       selectedItemColor: white
     ),
+    textTheme: TextTheme(
+      titleMedium: TextStyle(
+        color: white,
+        fontWeight: FontWeight.bold,
+        fontSize: 20,
+      ),
+      titleLarge: TextStyle(
+        color: white,
+        fontWeight: FontWeight.bold,
+        fontSize: 16,
+      ),
+      titleSmall: TextStyle(
+        color: white,
+        fontWeight: FontWeight.bold,
+        fontSize: 14,
+      ),
+    )
+
   );
+
+
+
 }

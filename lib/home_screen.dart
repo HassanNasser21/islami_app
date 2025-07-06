@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islami_app/nav_bar_unselected.dart';
 import 'package:islami_app/selected_nav_bar.dart';
 import 'package:islami_app/taps/hadeth_tap.dart';
-import 'package:islami_app/taps/quran_tap.dart';
+import 'package:islami_app/taps/quran/quran_tap.dart';
 import 'package:islami_app/taps/radio_tap.dart';
 import 'package:islami_app/taps/sebha_tap.dart';
 import 'package:islami_app/taps/time_tap.dart';
@@ -37,6 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        width: double.infinity,
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage(
@@ -53,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: MediaQuery.sizeOf(context).height * 0.15,
                 fit: BoxFit.fitWidth,
               ), //that show the image ,cause it widget not provider like borderRaidius.circular
-              screens[currentIndex],
+              Expanded(child: screens[currentIndex]),
             ],
           ),
         ),
