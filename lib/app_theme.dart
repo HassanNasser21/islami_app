@@ -27,6 +27,33 @@ class AppTheme {
       showUnselectedLabels: false,
       selectedItemColor: white
     ),
+    inputDecorationTheme: InputDecorationTheme(
+      filled: true,
+      fillColor: black.withValues(alpha: 0.7),
+      hintStyle: TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+        color: white
+      ),
+      border: OutlineInputBorder(
+       
+        borderRadius: BorderRadius.circular(10),
+        borderSide: BorderSide(
+          color: primaryColor,
+          width: 1,
+        )
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(10),
+        borderSide: BorderSide(
+          color: primaryColor,
+          width: 1,
+        ),
+      gapPadding: 20,
+      ),
+      
+    ),
+    
     textTheme: TextTheme(
       headlineSmall: TextStyle(
         color: white,
