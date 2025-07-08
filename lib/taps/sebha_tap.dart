@@ -13,7 +13,7 @@ class _SebhaTapState extends State<SebhaTap> {
     'سبحان الله',
     'الحمد لله',
     'لا إله إلا الله',
-     'الله اكبر',
+    'الله اكبر',
   ];
 
   int askarcount = 0;
