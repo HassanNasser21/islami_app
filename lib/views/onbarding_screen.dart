@@ -147,8 +147,7 @@ void _onFinishPressed() async {
   final prefs = await SharedPreferences.getInstance();
   await prefs.setBool('onboarding_completed', true);
 
-  // Navigate to home or login screen
-  Navigator.pushReplacementNamed(context, '/home'); // Replace with your actual route
+  Navigator.pushReplacementNamed(context, '/home');
 }
 }
 
