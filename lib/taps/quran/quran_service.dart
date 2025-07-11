@@ -356,6 +356,8 @@ class QuranService {
 
   static List<Sura> suras = List.generate(114, (index) => getsura(index));
 
+  static List<Sura> mostrecentlysuras = [];
+
   static Sura getsura(int index) => Sura(
     englishsuraNames[index],
     arabicsuraNames[index],
@@ -366,7 +368,8 @@ class QuranService {
   static void searchSura(String query) {
     suras.clear();
     for (int i = 0; i < 114; i++) {
-      if (arabicsuraNames[i].contains(query) || englishsuraNames[i].toLowerCase().contains(query.toLowerCase())) {
+      if (arabicsuraNames[i].contains(query) ||
+          englishsuraNames[i].toLowerCase().contains(query.toLowerCase())) {
         Sura sura = getsura(i);
         suras.add(sura);
       }
@@ -375,4 +378,10 @@ class QuranService {
 
   static Future<String> loadsurafile(int suranumber) =>
       rootBundle.loadString('assets/text/${suranumber}.txt');
+
+  static void addSuraToRecent(Sura sura) {
+   bool isExist = mostrecentlysuras.any((s) => s.numberofsura == sura.numberofsura);
+   if(!isExist) {mostrecentlysuras.add(sura);}
+   
+  }    
 }
