@@ -9,7 +9,7 @@ import 'package:islami_app/taps/time_tap.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});
-  static const String routeName = '/';
+  static const String routeName = '/home';
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
