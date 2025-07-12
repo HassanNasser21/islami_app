@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/app_theme.dart';
 import 'package:islami_app/home_screen.dart';
+import 'package:islami_app/taps/quran/quran_service.dart';
 import 'package:islami_app/taps/quran/sura_details_screen.dart';
 import 'package:islami_app/views/onbarding_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -9,7 +10,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final prefs = await SharedPreferences.getInstance();
   final onboardingCompleted = prefs.getBool('onboarding_completed') ?? false;
-
+   await  QuranService.loadMostRecentSuras();
   runApp(MyApp(showOnboarding: !onboardingCompleted));
 }
 
