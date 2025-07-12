@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/app_theme.dart';
 import 'package:islami_app/home_screen.dart';
+import 'package:islami_app/taps/hadeth/hadeth_details.dart';
 import 'package:islami_app/taps/quran/quran_service.dart';
 import 'package:islami_app/taps/quran/sura_details_screen.dart';
 import 'package:islami_app/views/onbarding_screen.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         HomeScreen.routeName: (context) => HomeScreen(),
         SuraDetails.routeName: (context) => SuraDetails(),
         OnbardingScreen.routeName: (context) => OnbardingScreen(),
+        HadethDetails.routeName: (context) => HadethDetails(),
       },
       initialRoute: showOnboarding ? OnbardingScreen.routeName : '/home',
       theme: AppTheme.lightTheme,
