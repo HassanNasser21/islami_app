@@ -11,20 +11,44 @@ class RadioItem extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppTheme.primaryColor,
         borderRadius: BorderRadius.circular(20),
-        image: DecorationImage(image: AssetImage('assets/images/radioBackground_Image.png'), fit: BoxFit.fill,),
+        image: DecorationImage(
+          image: AssetImage('assets/images/radioBackground_Image.png'),
+          fit: BoxFit.fill,
+        ),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Text('Radio Ibrahim Al-Akdar', style: Theme.of(context).textTheme.titleMedium!.copyWith(color: AppTheme.black),),
+          Text(
+            'Radio Ibrahim Al-Akdar',
+            style: Theme.of(
+              context,
+            ).textTheme.titleMedium!.copyWith(color: AppTheme.black),
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset('assets/images/stop_audio.png', height: 50, width: 50),
-              SizedBox(width: 13),
-              Image.asset('assets/images/speaker.png', height: 25, width: 25),
+              IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.favorite),
+                color: AppTheme.black,
+                iconSize: 30,
+              ),
+               IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.play_arrow),
+                color: AppTheme.black,
+                iconSize: 30,
+              ),
+               IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.volume_up),
+                color: AppTheme.black,
+                iconSize: 30,
+              ),
+            
             ],
-          )
+          ),
         ],
       ),
     );

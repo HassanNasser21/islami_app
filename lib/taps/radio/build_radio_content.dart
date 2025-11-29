@@ -6,13 +6,12 @@ class BuildRadioContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.separated(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        itemBuilder: (_, index) => RadioItem(),
-        separatorBuilder: (_, index) => SizedBox(height: 10),
-        itemCount: 7,
-      ),
+    return ListView.separated(
+      // padding: const EdgeInsets.symmetric(horizontal: 20),
+      itemBuilder: (_, index) => RadioItem(),
+      separatorBuilder: (_, index) => SizedBox(height: 10),
+      itemCount: 7,
     );
+    
   }
 }

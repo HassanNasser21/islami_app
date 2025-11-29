@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:islami_app/app_theme.dart';
 import 'package:islami_app/taps/radio/build_radio_content.dart';
 import 'package:islami_app/taps/radio/build_reciters_content.dart';
-import 'package:islami_app/taps/radio/build_tap_header.dart';
-
 
 class RadioTap extends StatefulWidget {
   const RadioTap({super.key});
@@ -19,29 +17,49 @@ class _RadioTapState extends State<RadioTap> {
   Widget build(BuildContext context) {
     final double halfWidth = MediaQuery.of(context).size.width * 0.45;
 
-    return Column(
-      children: [
-        const SizedBox(height: 8),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+    return DefaultTabController(
+      length: 2,
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
           children: [
-            BuildTapHeader(
-              label: 'Radio',
-              selected: isRadioSelected,
-              width: halfWidth,
-              onTap: () => setState(() => isRadioSelected = true),
+            Container(
+              decoration: BoxDecoration(
+                color: AppTheme.black.withValues(alpha: 0.7),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: TabBar(
+                indicatorSize: TabBarIndicatorSize.tab,
+                dividerColor: Colors.transparent,
+                indicator: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  color: AppTheme.primaryColor,
+                ),
+                unselectedLabelStyle: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                  color: AppTheme.white,
+                ),
+                labelStyle: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: AppTheme.black,
+                ),
+                tabs: [
+                  Tab(text: 'Radio'),
+                  Tab(text: 'Reciters'),
+                ],
+              ),
             ),
-            BuildTapHeader(
-              label: 'Reciters',
-              selected: !isRadioSelected,
-              width: halfWidth,
-              onTap: () => setState(() => isRadioSelected = false),
+            SizedBox(height: 15),
+            Expanded(
+              child: TabBarView(
+                children: [BuildRadioContent(), BuildRecitersContent()],
+              ),
             ),
           ],
         ),
-        const SizedBox(height: 16),
-        isRadioSelected ? BuildRadioContent() : BuildRecitersContent(),
-      ],
+      ),
     );
   }
 }
