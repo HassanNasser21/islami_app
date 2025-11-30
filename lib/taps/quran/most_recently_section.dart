@@ -24,8 +24,9 @@ class MostRecentlySection extends StatelessWidget {
               height: MediaQuery.of(context).size.height * 0.16,
               child: ListView.separated(
                 scrollDirection: Axis.horizontal,
-                itemBuilder: (_, index) =>
-                    MostRecentlyItem(QuranService.mostrecentlysuras.reversed.toList()[index]),
+                itemBuilder: (_, index) => MostRecentlyItem(
+                  QuranService.mostrecentlysuras.reversed.toList()[index],
+                ),
                 separatorBuilder: (_, _) => SizedBox(width: 10),
                 itemCount: QuranService.mostrecentlysuras.length,
               ),

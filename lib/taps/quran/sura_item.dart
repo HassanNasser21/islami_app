@@ -19,17 +19,29 @@ class SuraItem extends StatelessWidget {
               image: AssetImage('assets/images/sura_number.png'),
             ),
           ),
-          child: Text('${sura.numberofsura}', style: Theme.of(context).textTheme.titleLarge),
+          child: Text(
+            '${sura.numberofsura}',
+            style: Theme.of(context).textTheme.titleLarge,
+          ),
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('${sura.englishName}', style: Theme.of(context).textTheme.titleLarge),
-            Text('${sura.ayahCount} verses', style: Theme.of(context).textTheme.titleSmall),
+            Text(
+              '${sura.englishName}',
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
+            Text(
+              '${sura.ayahCount} verses',
+              style: Theme.of(context).textTheme.titleSmall,
+            ),
           ],
         ),
         Spacer(),
-        Text('${sura.arabicName}', style: Theme.of(context).textTheme.titleLarge),
+        Text(
+          '${sura.arabicName}',
+          style: Theme.of(context).textTheme.titleLarge,
+        ),
       ],
     );
   }

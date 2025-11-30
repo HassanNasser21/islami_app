@@ -70,10 +70,12 @@ class _HadethItemState extends State<HadethItem> {
                 height: double.infinity,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/images/hadeth_card_background.png'),
+                    image: AssetImage(
+                      'assets/images/hadeth_card_background.png',
+                    ),
                   ),
                 ),
-      
+
                 child: hadeth == null
                     ? LoadingIndicator()
                     : ListView.separated(

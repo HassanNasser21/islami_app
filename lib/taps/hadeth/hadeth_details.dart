@@ -11,8 +11,7 @@ class HadethDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenhight = MediaQuery.of(context).size.height;
 
-   Hadeth hadeth= ModalRoute.of(context)!.settings.arguments as Hadeth  ;
-   
+    Hadeth hadeth = ModalRoute.of(context)!.settings.arguments as Hadeth;
 
     return Scaffold(
       appBar: AppBar(title: Text('Hadeth ${hadeth.num}')),
@@ -47,21 +46,18 @@ class HadethDetails extends StatelessWidget {
             ),
           ),
           Expanded(
-            child:  ListView.separated(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 20,
-                      vertical: 10,
-                    ),
-                    itemBuilder: (context, index) => Text(
-                      '${hadeth.content[index]}',
-                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                        color: AppTheme.primaryColor,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                    itemCount: hadeth.content.length,
-                    separatorBuilder: (context, index) => SizedBox(height: 10),
-                  ),
+            child: ListView.separated(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              itemBuilder: (context, index) => Text(
+                '${hadeth.content[index]}',
+                style: Theme.of(
+                  context,
+                ).textTheme.titleMedium!.copyWith(color: AppTheme.primaryColor),
+                textAlign: TextAlign.center,
+              ),
+              itemCount: hadeth.content.length,
+              separatorBuilder: (context, index) => SizedBox(height: 10),
+            ),
           ),
           Image.asset(
             'assets/images/details_footer.png',
@@ -72,6 +68,4 @@ class HadethDetails extends StatelessWidget {
       ),
     );
   }
-
-
 }

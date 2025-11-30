@@ -8,16 +8,16 @@ class HadethTap extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.only(top: 12,bottom: 20),
+      padding: EdgeInsets.only(top: 12, bottom: 20),
       child: CarouselSlider.builder(
-        itemCount: 50, 
-        itemBuilder: (_, index, realIndex) => HadethItem(index: index,),
-         options: CarouselOptions(
-           height: double.infinity,
-           enlargeCenterPage: true,
-           enlargeFactor: 0.2,
-           
-         )),
+        itemCount: 50,
+        itemBuilder: (_, index, realIndex) => HadethItem(index: index),
+        options: CarouselOptions(
+          height: double.infinity,
+          enlargeCenterPage: true,
+          enlargeFactor: 0.2,
+        ),
+      ),
     );
   }
 }

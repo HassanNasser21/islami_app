@@ -13,11 +13,7 @@ class MostRecentlyItem extends StatelessWidget {
 
     return InkWell(
       onTap: () {
-        Navigator.pushNamed(
-          context,
-          SuraDetails.routeName,
-          arguments: sura,
-        );
+        Navigator.pushNamed(context, SuraDetails.routeName, arguments: sura);
       },
       child: Container(
         height: double.infinity,
@@ -32,7 +28,7 @@ class MostRecentlyItem extends StatelessWidget {
           children: [
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      
+
               children: [
                 Text(
                   sura.englishName,

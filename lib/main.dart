@@ -4,19 +4,26 @@ import 'package:islami_app/home_screen.dart';
 import 'package:islami_app/taps/hadeth/hadeth_details.dart';
 import 'package:islami_app/taps/quran/quran_service.dart';
 import 'package:islami_app/taps/quran/sura_details_screen.dart';
+import 'package:islami_app/taps/radio/provider/radio_provider.dart';
 import 'package:islami_app/views/onbarding_screen.dart';
+import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final prefs = await SharedPreferences.getInstance();
   final onboardingCompleted = prefs.getBool('onboarding_completed') ?? false;
-   await  QuranService.loadMostRecentSuras();
-  runApp(MyApp(showOnboarding: !onboardingCompleted));
+  await QuranService.loadMostRecentSuras();
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => RadioProvider(),
+      child: MyApp(showOnboarding: !onboardingCompleted),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
-    final bool showOnboarding;
+  final bool showOnboarding;
 
   const MyApp({super.key, required this.showOnboarding});
 

@@ -8,16 +8,15 @@ class AppTheme {
   static ThemeData lightTheme = ThemeData();
   static ThemeData darkTheme = ThemeData(
     scaffoldBackgroundColor: black,
-    appBarTheme: 
-    AppBarTheme(
+    appBarTheme: AppBarTheme(
       foregroundColor: primaryColor,
       backgroundColor: black,
-    centerTitle: true,
-    titleTextStyle: TextStyle(
-      fontSize: 20,
-      fontWeight: FontWeight.bold,
-      color: primaryColor,
-    )
+      centerTitle: true,
+      titleTextStyle: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+        color: primaryColor,
+      ),
     ),
 
     primaryColor: primaryColor,
@@ -25,7 +24,7 @@ class AppTheme {
       backgroundColor: primaryColor,
       type: BottomNavigationBarType.fixed,
       showUnselectedLabels: false,
-      selectedItemColor: white
+      selectedItemColor: white,
     ),
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
@@ -33,27 +32,19 @@ class AppTheme {
       hintStyle: TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.bold,
-        color: white
+        color: white,
       ),
       border: OutlineInputBorder(
-       
         borderRadius: BorderRadius.circular(10),
-        borderSide: BorderSide(
-          color: primaryColor,
-          width: 1,
-        )
+        borderSide: BorderSide(color: primaryColor, width: 1),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(10),
-        borderSide: BorderSide(
-          color: primaryColor,
-          width: 1,
-        ),
-      gapPadding: 20,
+        borderSide: BorderSide(color: primaryColor, width: 1),
+        gapPadding: 20,
       ),
-      
     ),
-    
+
     textTheme: TextTheme(
       headlineSmall: TextStyle(
         color: white,
@@ -80,10 +71,6 @@ class AppTheme {
         fontWeight: FontWeight.bold,
         fontSize: 36,
       ),
-    )
-
+    ),
   );
-
-
-
 }
