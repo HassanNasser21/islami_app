@@ -58,10 +58,10 @@ class _QuranTapState extends State<QuranTap> {
             itemBuilder: (context, index) {
               Sura sura = QuranService.suras[index];
               return GestureDetector(
-                onTap: () async{
+                onTap: () async {
                   QuranService.addSuraToRecent(sura);
 
-                 await Navigator.of(
+                  await Navigator.of(
                     context,
                   ).pushNamed(SuraDetails.routeName, arguments: sura);
                   setState(() {});

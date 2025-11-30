@@ -62,7 +62,7 @@ class _OnbardingScreenState extends State<OnbardingScreen> {
             ),
             Expanded(
               child: PageView.builder(
-                onPageChanged: (index){
+                onPageChanged: (index) {
                   setState(() {
                     currentIndex = index;
                   });
@@ -124,7 +124,7 @@ class _OnbardingScreenState extends State<OnbardingScreen> {
                       setState(() {
                         currentIndex++;
                       });
-                    }else{
+                    } else {
                       _onFinishPressed();
                     }
                   },
@@ -142,16 +142,15 @@ class _OnbardingScreenState extends State<OnbardingScreen> {
       ),
     );
   }
-  
-void _onFinishPressed() async {
-  final prefs = await SharedPreferences.getInstance();
-  await prefs.setBool('onboarding_completed', true);
 
-  // Navigate to home or login screen
-  Navigator.pushReplacementNamed(context, '/home'); // Replace with your actual route
+  void _onFinishPressed() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('onboarding_completed', true);
+
+    // Navigate to home or login screen
+    Navigator.pushReplacementNamed(
+      context,
+      '/home',
+    ); // Replace with your actual route
+  }
 }
-}
-
-
-
-

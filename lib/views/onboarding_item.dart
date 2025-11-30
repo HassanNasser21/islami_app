@@ -15,7 +15,7 @@ class OnboardingItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.max,
-        
+
           children: [
             Image.asset(
               'assets/images/${page.image}.png',

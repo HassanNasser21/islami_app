@@ -4,9 +4,5 @@ class Sura {
   int ayahCount;
   int numberofsura;
 
-  Sura(this.englishName, 
-  this.arabicName,
-   this.ayahCount, 
-   this.numberofsura,
-   );
+  Sura(this.englishName, this.arabicName, this.ayahCount, this.numberofsura);
 }
