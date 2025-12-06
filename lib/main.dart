@@ -5,6 +5,7 @@ import 'package:islami_app/taps/hadeth/hadeth_details.dart';
 import 'package:islami_app/taps/quran/quran_service.dart';
 import 'package:islami_app/taps/quran/sura_details_screen.dart';
 import 'package:islami_app/taps/radio/provider/radio_provider.dart';
+import 'package:islami_app/taps/time/azkar_screen_details.dart';
 import 'package:islami_app/views/onbarding_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -17,7 +18,7 @@ void main() async {
   runApp(
     ChangeNotifierProvider(
       create: (context) => RadioProvider(),
-      child: MyApp(showOnboarding: !onboardingCompleted),
+      child: MyApp(showOnboarding: onboardingCompleted),
     ),
   );
 }
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
         SuraDetails.routeName: (context) => SuraDetails(),
         OnbardingScreen.routeName: (context) => OnbardingScreen(),
         HadethDetails.routeName: (context) => HadethDetails(),
+        AzkarScreenDetails.routeName: (context) => AzkarScreenDetails(),
       },
       initialRoute: showOnboarding ? OnbardingScreen.routeName : '/home',
       theme: AppTheme.lightTheme,

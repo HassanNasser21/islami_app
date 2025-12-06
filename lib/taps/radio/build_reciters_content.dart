@@ -21,13 +21,13 @@ class BuildRecitersContent extends StatelessWidget {
         return ListView.separated(
           itemBuilder: (_, index) => RadioItem(
             name: radioRecitersResponseModel.reciters![index].name ?? '',
-            url:  "${radioRecitersResponseModel.reciters![index].moshaf![0].server}010.mp3",
+            url:
+                "${radioRecitersResponseModel.reciters![index].moshaf![0].server}010.mp3",
           ),
           separatorBuilder: (_, index) => SizedBox(height: 10),
           itemCount: 7,
         );
       },
     );
- 
   }
 }

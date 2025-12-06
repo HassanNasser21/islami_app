@@ -15,9 +15,12 @@ class RadioService {
       rethrow;
     }
   }
-   static Future<RadioRecitersModel> GetRecitersData() async {
+
+  static Future<RadioRecitersModel> GetRecitersData() async {
     try {
-      Uri uri = Uri.parse("https://www.mp3quran.net/api/v3/reciters?language=ar");
+      Uri uri = Uri.parse(
+        "https://www.mp3quran.net/api/v3/reciters?language=ar",
+      );
       var response = await http.get(uri);
       var jsonResponse = jsonDecode(response.body);
       return RadioRecitersModel.fromJson(jsonResponse);
